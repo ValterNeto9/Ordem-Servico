@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<div id="form-ordem-servico" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h4 class="modal-title"
+				ng-if="currentState == 'ordem-servico.insert'">Incluir Perfil</h4>
+			<h4 class="modal-title"
+				ng-if="currentState == 'ordem-servico.update'">Alterar Perfil</h4>
+		</div>
+		<div class="modal-body">
+			<div class="form-group">
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary"
+						ng-click="updateLink()"
+						ng-if="currentState == 'ordem-servico.link'">Salvar</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal"
+						ui-sref="ordem-servico.list">Cancelar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</html>

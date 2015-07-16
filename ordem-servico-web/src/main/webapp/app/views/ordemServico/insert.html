@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<div id="form-ordem-servico" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-header">
+			<h4 class="modal-title"
+				ng-if="currentState == 'ordem-servico.insert'">Incluir Perfil</h4>
+			<h4 class="modal-title"
+				ng-if="currentState == 'ordem-servico.update'">Alterar Perfil</h4>
+		</div>
+		<div class="modal-body">
+			<div class="form-group">
+				<form name="ordemServicoForm" novalidate>
+					<!-- <div class="form-group"
+						ng-class="{'has-error': perfilForm.nome.$error.required && perfilForm.nome.$dirty}">
+						<input type="text" name="nome" class="form-control"
+							placeholder="Nome do Perfil" ng-model="perfil.nome"
+							maxlength="100" required
+							ng-disabled="currentState == 'perfil.detail'">
+					</div> -->
+					<div class="form-group">
+						<input type="text" name="solicitante" class="form-control" placeholder="solicitante" maxlength="100" required/>
+						<input type="text" name="descricao" class="form-control" placeholder="descrição" maxlength="100" required/>
+						<select name="status">
+							<option value="aberto">Aberto</option>
+							<option value="andamento">Em andamento</option>
+							<option value="fechado">Fechado</option>
+						</select>
+						<input type="text" name="responsavel" class="form-control" placeholder="responsável" maxlength="100" required/>
+					</div>
+				</form>
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary" ng-disabled="ordemServicoForm.$invalid" ng-click="insert(ordemServicoForm)" ng-if="currentState == 'ordem-servico.insert'">Salvar</button>
+          	<button type="button" class="btn btn-primary" ng-disabled="ordemServicoForm.$invalid" ng-click="update(ordemServicoForm)" ng-if="currentState == 'ordem-servico.update'">Salvar</button>
+			<button type="button" class="btn btn-default" data-dismiss="modal" ui-sref="ordem-servico.list">Cancelar</button>
+		</div>
+	</div>
+</div>
+</html>
